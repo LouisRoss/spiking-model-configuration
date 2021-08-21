@@ -1,0 +1,28 @@
+{
+  "services" : {
+    "controlConnector": {
+      "host": "http://192.168.1.150",
+      "port": "5000"
+    },
+    "persistConnector": {
+      "host": "http://192.168.1.150",
+      "port": "5001"
+    },
+    "modelPersist": {
+      "host": "http://192.168.1.150",
+      "port": "5002"
+    },
+    "modelControl": {
+      "host": "http://192.168.1.150",
+      "port": "8081"
+    },
+    "modelVisualizer": {
+      "host": "http://192.168.1.150",
+      "port": "8082"
+    },
+    "modelSelector": {
+      "host": "http://192.168.1.150",
+      "port": "8080"
+    }
+  }
+}
