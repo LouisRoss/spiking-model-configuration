@@ -1,5 +1,5 @@
 class PrivateSingleton {
-  constructor() {
+  constructor(callback) {
     this.configuration = null;
 
     var init = {
@@ -15,6 +15,9 @@ class PrivateSingleton {
     .then(config => {
       this.configuration = config;
       console.log(this.configuration);
+      if (callback) {
+        callback(this.configuration);
+      }
     });
   }
 }
@@ -24,9 +27,13 @@ class Configuration {
     throw new Error('Use Configuration.getInstance()');
   }
   
-  static getInstance() {
+  static getInstance(callback) {
     if (!Configuration.instance) {
-      Configuration.instance = new PrivateSingleton();
+      Configuration.instance = new PrivateSingleton(callback);
+    } else {
+      if (callback) {
+        callback(Configuration.instance.configuration);
+      }
     }
     return Configuration.instance.configuration;
   }
