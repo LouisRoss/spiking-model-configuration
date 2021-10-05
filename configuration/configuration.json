@@ -2,7 +2,8 @@
   "services" : {
     "controlConnector": {
       "host": "http://192.168.1.150",
-      "port": "5000"
+      "port": "5000",
+      "socketport": "5003"
     },
     "packagerConnector": {
       "host": "http://192.168.1.150",
@@ -21,7 +22,7 @@
       "host": "http://192.168.1.150",
       "port": "8081"
     },
-    "modelVisualizer": {
+    "modelMonitor": {
       "host": "http://192.168.1.150",
       "port": "8082"
     },
