@@ -2,8 +2,11 @@
   "services" : {
     "controlConnector": {
       "host": "http://192.168.1.150",
-      "port": "5000",
-      "socketport": "5003"
+      "port": "5000"
+    },
+    "controlAdapter": {
+      "host": "192.168.1.150",
+      "port": "5003"
     },
     "packagerConnector": {
       "host": "http://192.168.1.150",
