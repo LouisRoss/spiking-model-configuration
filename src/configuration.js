@@ -1,6 +1,7 @@
 class PrivateSingleton {
   constructor(callback) {
     this.configuration = null;
+    this.callbacks = [];
 
     var init = {
       method: 'GET',
@@ -18,7 +19,15 @@ class PrivateSingleton {
       if (callback) {
         callback(this.configuration);
       }
+      this.callbacks.forEach(callback => {
+        callback(this.configuration);
+      });
+      this.callbacks = [];
     });
+  }
+
+  deferCallback(callback) {
+    this.callbacks.push(callback);
   }
 }
 
@@ -31,11 +40,13 @@ class Configuration {
     if (!Configuration.instance) {
       Configuration.instance = new PrivateSingleton(callback);
     } else {
-      if (callback) {
+      if (!Configuration.instance.configuration) {
+        Configuration.instance.deferCallback(callback);
+      }
+      else {
         callback(Configuration.instance.configuration);
       }
     }
-    return Configuration.instance.configuration;
   }
 }
 
