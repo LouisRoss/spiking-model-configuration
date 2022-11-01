@@ -6,6 +6,11 @@
       "deploytype": "internalfast1"
     },
     {
+      "name": "Research4",
+      "host": "192.168.1.16",
+      "deploytype": "internalfast1"
+    },
+    {
       "name": "Sensor1",
       "host": "192.168.1.170",
       "deploytype": "sensorfast1"
