@@ -1,0 +1,21 @@
+{
+  "Execution":
+  {
+      "ModelExecutable": "./NeuronModel",
+      "InitializerLocation": "./ModelPackageInitializer.so",
+      "CommandControlAcceptors": [
+        { "AcceptorType": "CommandControlBasicUi" },
+        { "AcceptorType": "CommandControlSocket" }
+      ],
+      "InputStreamers": [
+          { "Location": "./SensorInputSocket.so", "ConnectionString": "0.0.0.0:8001" }
+      ],
+      "OutputStreamers": [
+        { "Interconnect": "./SpikeOutputSocket.so", "BasePort": 8001 },
+        { "Location": "./SpikeOutputRecord.so" },
+        { "Location": "./SpikeOutputSocket.so", "ConnectionString": "localhost:8001", "Service": "realtimeShim:rawport" }
+      ]
+  },
+  "RecordFile": "ModelEngineRecord.csv",
+  "Wiring": "wiring.csv"
+}
