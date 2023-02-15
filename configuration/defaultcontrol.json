@@ -17,5 +17,6 @@
       ]
   },
   "RecordFile": "ModelEngineRecord.csv",
+  "CleanRecordFile": "CleanRecord.csv",
   "Wiring": "wiring.csv"
 }
